@@ -25,10 +25,6 @@ function cargarDatos() {
         nombre.textContent =  nombreIngresado
         apellido.textContent =  apellidoIngresado
         participantes = document.querySelectorAll(".participante")
-        let participantesobj = {}
-        for (let i = 0; i < participantes.length; i++) {
-            participantesobj.nombre = participantes.textContent
-        }
         
         eliminar.addEventListener("click", () => {
             participante.remove()
@@ -38,17 +34,24 @@ function cargarDatos() {
 }
 
 function mezcla() {
-    let random = Math.floor(Math.random()*participantes.length)
-    for (let i = 0; i < participantes.length; i++) {
-        participantes[random].style.order = Math.floor(Math.random()*participantes.length)
+    if (participantes != undefined) {
+        let random = Math.floor(Math.random()*participantes.length)
+        for (let i = 0; i < participantes.length; i++) {
+            participantes[random].style.order = Math.floor(Math.random()*participantes.length)
+        } 
     }
+    
 }
 
 function sorteo() {
-    let random = Math.floor(Math.random() * participantes.length)
+    if (participantes != undefined) {
+        let random = Math.floor(Math.random() * participantes.length)
     alert("El ganador del sorteo es " + participantes[random].children[0].textContent+ " " + participantes[random].children[1].textContent)
     participantes[random].style.border = "10px solid red"
     participantes[random].style.backgroundColor = "yellow"
+    
+    }
+   
 }
 
 cargar.addEventListener("click", cargarDatos)

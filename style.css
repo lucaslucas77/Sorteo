@@ -5,7 +5,10 @@
 }
 
 body {
-    background-color: lime;
+    background-image: url(fondo.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .botones {
@@ -17,10 +20,11 @@ body {
 
 .boton {
     padding: 1vw;
-    background-color: green;
+    background-color: rgba(0, 0, 0, 0.68);
     font-size: 2vw;
     border-radius: 3vw;
     width: 15vw;
+    color: orange;
 }
 
 .participantes {
